@@ -4,6 +4,7 @@ import java.net.URL;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,6 +22,9 @@ public class TestSession {
   private AndroidDriver driver;
   private WebDriverWait wait;
   private By loginScreenLink;
+  private By userNameField;
+  private By passwordField;
+  private By loginButton;
   
   private DesiredCapabilities caps;
   
@@ -36,20 +40,39 @@ public class TestSession {
     driver = new AndroidDriver(new URL(APPIUM), caps);
     wait = new WebDriverWait(driver, 10);
     loginScreenLink = MobileBy.AccessibilityId("Login Screen");
-    wait.until(ExpectedConditions.presenceOfElementLocated(loginScreenLink));
+    userNameField = MobileBy.AccessibilityId("username");
+    passwordField = MobileBy.AccessibilityId("password");
+    loginButton = MobileBy.AccessibilityId("loginBtn");
+    
   }
   
   @Test
-  public void test()
+  public void testGoToLogin()
   {
     System.out.println("Inside the test");
-    driver.findElement(loginScreenLink).click();
+    WebElement loginScreenElement = wait.until(
+        ExpectedConditions.presenceOfElementLocated(
+            loginScreenLink));
+    loginScreenElement.click();
+    
+    WebElement userNameElement = wait.until(
+        ExpectedConditions.presenceOfElementLocated(
+            userNameField));
+    WebElement passwordElement = driver.findElement(passwordField);
+    
+    WebElement logginButtonElement = driver.findElement(loginButton);
+    
+    userNameElement.sendKeys("alice");
+    passwordElement.sendKeys("mypassword");
+    logginButtonElement.click();
     
     try {
       Thread.sleep(10000);
-      }catch (Exception e){
-        e.printStackTrace();
-      }
+    }catch (Exception e) {
+      e.printStackTrace();
+    }
+    
+    
     
   }
   
