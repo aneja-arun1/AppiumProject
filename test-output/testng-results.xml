@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="9803" started-at="2022-02-18T21:29:11 IST" finished-at="2022-02-18T21:29:21 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="9803" started-at="2022-02-18T21:29:11 IST" finished-at="2022-02-18T21:29:21 IST">
+      <class name="com.arun.tests.TestSession">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.arun.tests.TestSession@8bd86c8]" name="setUp" is-config="true" duration-ms="8817" started-at="2022-02-18T21:29:11 IST" finished-at="2022-02-18T21:29:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="test()[pri:0, instance:com.arun.tests.TestSession@8bd86c8]" name="test" duration-ms="65" started-at="2022-02-18T21:29:20 IST" finished-at="2022-02-18T21:29:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.arun.tests.TestSession@8bd86c8]" name="tearDown" is-config="true" duration-ms="818" started-at="2022-02-18T21:29:20 IST" finished-at="2022-02-18T21:29:21 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.arun.tests.TestSession -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
