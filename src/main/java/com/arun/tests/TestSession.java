@@ -62,7 +62,11 @@ public class TestSession {
     WebElement loginScreenElement = wait.until(
         ExpectedConditions.presenceOfElementLocated(
             loginScreenLink));
+    System.out.println(loginScreenElement.getLocation());
+    System.out.println(loginScreenElement.getRect());
+    System.out.println(loginScreenElement.getSize());
     loginScreenElement.click();
+    
     
     WebElement userNameElement = wait.until(
         ExpectedConditions.presenceOfElementLocated(
@@ -100,7 +104,9 @@ public class TestSession {
     WebElement echoScreen = wait.until(
         ExpectedConditions.presenceOfElementLocated(
             echoScreenLink));
+    System.out.println(echoScreen.getLocation());
     echoScreen.click();
+    
     
     WebElement msgInput = wait.until(
         ExpectedConditions.presenceOfElementLocated(
@@ -123,7 +129,7 @@ public class TestSession {
     }
     
     
-  }
+  } 
   
   @AfterMethod
   public void tearDown() {
