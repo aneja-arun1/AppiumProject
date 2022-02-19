@@ -25,10 +25,15 @@ public class TestSession {
   private By userNameField;
   private By passwordField;
   private By loginButton;
+  private By loginSuccessMessage;
+  private By echoScreenLink;
+  private By msgInputField;
+  private By saveButton;
+  
   
   private DesiredCapabilities caps;
   
-  @BeforeTest
+  @BeforeMethod
   public void setUp() throws MalformedURLException {
     caps = new DesiredCapabilities();
     caps.setCapability("platformName", "Android");
@@ -40,9 +45,13 @@ public class TestSession {
     driver = new AndroidDriver(new URL(APPIUM), caps);
     wait = new WebDriverWait(driver, 10);
     loginScreenLink = MobileBy.AccessibilityId("Login Screen");
+    echoScreenLink = MobileBy.AccessibilityId("Echo Box");
     userNameField = MobileBy.AccessibilityId("username");
     passwordField = MobileBy.AccessibilityId("password");
     loginButton = MobileBy.AccessibilityId("loginBtn");
+    loginSuccessMessage = MobileBy.xpath("//android.widget.TextView[2]");
+    msgInputField = MobileBy.AccessibilityId("messageInput");
+    saveButton = MobileBy.AccessibilityId("messageSaveBtn");
     
   }
   
@@ -62,9 +71,18 @@ public class TestSession {
     
     WebElement logginButtonElement = driver.findElement(loginButton);
     
+    
     userNameElement.sendKeys("alice");
     passwordElement.sendKeys("mypassword");
     logginButtonElement.click();
+    
+    WebElement loginSuccess = wait.until(
+        ExpectedConditions.presenceOfElementLocated(
+            loginSuccessMessage));
+    System.out.println(loginSuccess.getText());
+    
+    Assert.assertTrue(loginSuccess.getText().contains("You are logged in as"));
+        
     
     try {
       Thread.sleep(10000);
@@ -76,7 +94,38 @@ public class TestSession {
     
   }
   
-  @AfterTest
+  @Test
+  public void testEchoBox() {
+    String echoString = "I am in";
+    WebElement echoScreen = wait.until(
+        ExpectedConditions.presenceOfElementLocated(
+            echoScreenLink));
+    echoScreen.click();
+    
+    WebElement msgInput = wait.until(
+        ExpectedConditions.presenceOfElementLocated(
+            msgInputField));
+    msgInput.sendKeys(echoString);
+    
+    WebElement save = driver.findElement(saveButton);
+    save.click();
+    
+    WebElement echoText = wait.until(
+        ExpectedConditions.presenceOfElementLocated(
+            MobileBy.AccessibilityId(
+                echoString)));
+    System.out.println(echoText.getText());
+        
+    try {
+      Thread.sleep(10000);
+    }catch (Exception e) {
+      e.printStackTrace();
+    }
+    
+    
+  }
+  
+  @AfterMethod
   public void tearDown() {
     if (driver != null) {
       driver.quit();
