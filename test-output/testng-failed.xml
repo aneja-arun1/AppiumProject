@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.arun.tests.TestSession">
+      <class name="com.arun.tests.TestMobileWeb">
         <methods>
-          <include name="testGoToLogin"/>
+          <include name="testWebAutomation"/>
           <include name="setUp"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.arun.tests.TestSession -->
+      </class> <!-- com.arun.tests.TestMobileWeb -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

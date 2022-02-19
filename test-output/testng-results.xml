@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="23296" started-at="2022-02-20T03:56:02 IST" finished-at="2022-02-20T03:56:26 IST">
+  <suite name="Default suite" duration-ms="30847" started-at="2022-02-20T05:15:46 IST" finished-at="2022-02-20T05:16:17 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="23296" started-at="2022-02-20T03:56:02 IST" finished-at="2022-02-20T03:56:26 IST">
-      <class name="com.arun.tests.TestList">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.arun.tests.TestList@3c83468e]" name="setUp" is-config="true" duration-ms="8365" started-at="2022-02-20T03:56:02 IST" finished-at="2022-02-20T03:56:11 IST">
+    <test name="Default test" duration-ms="30847" started-at="2022-02-20T05:15:46 IST" finished-at="2022-02-20T05:16:17 IST">
+      <class name="com.arun.tests.TestMobileWeb">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.arun.tests.TestMobileWeb@3e3315d9]" name="setUp" is-config="true" duration-ms="20046" started-at="2022-02-20T05:15:46 IST" finished-at="2022-02-20T05:16:06 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testListScroll()[pri:0, instance:com.arun.tests.TestList@3c83468e]" name="testListScroll" duration-ms="14314" started-at="2022-02-20T03:56:11 IST" finished-at="2022-02-20T03:56:25 IST">
+        <test-method status="PASS" signature="testWebAutomation()[pri:0, instance:com.arun.tests.TestMobileWeb@3e3315d9]" name="testWebAutomation" duration-ms="10012" started-at="2022-02-20T05:16:06 IST" finished-at="2022-02-20T05:16:16 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testListScroll -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.arun.tests.TestList@3c83468e]" name="tearDown" is-config="true" duration-ms="554" started-at="2022-02-20T03:56:25 IST" finished-at="2022-02-20T03:56:26 IST">
+        </test-method> <!-- testWebAutomation -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.arun.tests.TestMobileWeb@3e3315d9]" name="tearDown" is-config="true" duration-ms="711" started-at="2022-02-20T05:16:16 IST" finished-at="2022-02-20T05:16:17 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.arun.tests.TestList -->
+      </class> <!-- com.arun.tests.TestMobileWeb -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
